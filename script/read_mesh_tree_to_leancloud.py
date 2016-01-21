@@ -3,7 +3,6 @@
 import leancloud
 from leancloud import Object
 
-
 from mdat.config import APP_ID, APP_KEY
 
 
