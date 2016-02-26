@@ -6,3 +6,7 @@
 # ###################################
 APP_ID = 'Xp9mXJPoV5Fg3faA7fN7RTN2-gzGzoHsz'
 APP_KEY = 'IyM3f9aaa9vO7xGVYXyOM6BF'
+
+# DV default value
+DV_DEFAULT = 1
+DV_STEP = 0.5
