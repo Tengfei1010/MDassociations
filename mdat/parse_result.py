@@ -20,7 +20,11 @@ def parse_result():
                     'item2': results[1],
                     'item3': results[2],
                 }
-                collection.insert_one(post)
+                if collection.find({'item1': results[0][1:],
+                                    'item2': results[1]}
+                                   ).count() == 0:
+                    collection.insert_one(post)
+
                 is_target = False
 
             if line.strip() == 'Scores for this hit:':
