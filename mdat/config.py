@@ -10,3 +10,10 @@ APP_KEY = 'IyM3f9aaa9vO7xGVYXyOM6BF'
 # DV default value
 DV_DEFAULT = 1
 DV_STEP = 0.5
+
+
+######################################
+# mongodb config #####################
+######################################
+MONGODB_HOST = '10.108.123.78'
+MONGODB_PORT = 27017
