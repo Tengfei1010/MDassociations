@@ -1,0 +1,48 @@
+target: NR_075077
+length: 2000
+miRNA : hsa-let-7a-5p
+length: 22
+
+mfe: -21.9 kcal/mol
+p-value: 0.996885
+
+position  88
+target 5'        U    CGC        G 3'
+                  GACC   CUGCCUCA
+                  UUGG   GAUGGAGU
+miRNA  3' UUGAUAUG    AU           5'
+
+
+target: NM_001276352
+length: 1404
+miRNA : hsa-let-7a-5p
+length: 22
+
+mfe: -21.5 kcal/mol
+p-value: 0.992880
+
+position  805
+target 5'      G  UU            A 3'
+                AC  UCUAUUAUCUCA
+                UG  GGAUGAUGGAGU
+miRNA  3' UUGAUA  UU              5'
+
+
+target: NM_000299
+length: 2000
+miRNA : hsa-let-7a-5p
+length: 22
+
+mfe: -22.7 kcal/mol
+p-value: 0.981568
+
+position  1018
+target 5' G     G   UAU       CCG     U 3'
+           GGCUG GCA   ACCUAUU   GCUUC
+           UUGAU UGU   UGGAUGA   UGGAG
+miRNA  3'       A                     U 5'
+
+target: NM_001276352
+length: 1404
+miRNA : hsa-let-7a-5
+length: 22
