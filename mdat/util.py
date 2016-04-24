@@ -59,11 +59,12 @@ def calculate_dv_value_by_disease(tags, disease_tags):
     :param disease_tags:
     :return:
     """
-    _current_value = DV_DEFAULT
+    _current_value = 0
     for tag in tags:
         for disease_tag in disease_tags:
             i = calculate_disease_multiple(tag, disease_tag)
-            _current_value += pow(DV_STEP, i)
+            if i != 0:
+                _current_value += pow(DV_STEP, i)
 
     return _current_value
 
