@@ -6,7 +6,6 @@ import time
 import traceback
 from pymongo import MongoClient
 from mdat.config import MONGODB_HOST, MONGODB_PORT
-from mdat.db.conn_mongo import conn_mongo
 from bson.code import Code
 
 client = MongoClient(MONGODB_HOST, MONGODB_PORT)
@@ -56,13 +55,24 @@ def target_count():
     rrna.reverse()
 
     for i in range(0, len(rna)):
-        for j in range(0, len(rna)):
+        # 将两个特定的rna对应的target分别存到rna1[] rna2[]中， 在两个list中计算相似的target数目
+        # 先查出两个rna对应的target存到内存中再计算速度较快
+        rna1 = []
+        f1 = db.target_scan2.find({"item2": rna[i]}, {"item1": 1, "_id": 0})
+        for f1key in f1:
+            rna1.extend(f1key.values())
 
+        for j in range(0, len(rna)):
             if rna[i] == rrna[j]:
                 break
             common = 0
-            for f1 in db.target_scan2.find({"item2": rna[i]}):
-                if db.target_scan2.find({"item2": rrna[j], "item1": f1["item1"]}).count():
+            rna2 = []
+            f2 = db.target_scan2.find({"item2": rrna[j]}, {"item1": 1, "_id": 0})
+            for f2key in f2:
+                rna2.extend(f2key.values())
+
+            for key in rna1:
+                if key in rna2:
                     common += 1
 
             items = {
@@ -72,14 +82,20 @@ def target_count():
                 "rna2-times": rna_dict[rrna[j]],
                 "common-times": common
             }
-            db.is2_similar.insert_one(items)
+            db.similar_new.insert_one(items)
 
     end_time = time.time()
     cpu_end = time.clock()
     print 'sum time', end_time-start_time
     print 'cup time', cpu_end-cpu_start
 
+
 if __name__ == '__main__':
     # rna_count()
     target_count()
+
+
+
+
+
 
