@@ -48,7 +48,7 @@ def calculate_similar():
     """
     client = conn_mongo()
     db = client.md
-    for item in db.similar_new.find():
+    for item in db.rna_times.find():
         n1 = item["rna1-times"]
         n2 = item["rna2-times"]
         c = item["common-times"]
@@ -62,7 +62,12 @@ def calculate_similar():
         db.similar_score.insert(items)
 
 if __name__ == "__main__":
-    print similarity_element(5.0, 6.0, 3)
-    # calculate_similar()
+    # print similarity_element(5.0, 6.0, 3)
+    calculate_similar()
+
+
+
+
+
 
 
