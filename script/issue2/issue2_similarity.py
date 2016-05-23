@@ -64,10 +64,3 @@ def calculate_similar():
 if __name__ == "__main__":
     # print similarity_element(5.0, 6.0, 3)
     calculate_similar()
-
-
-
-
-
-
-
