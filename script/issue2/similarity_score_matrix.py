@@ -30,6 +30,21 @@ def generate_matrix(file_path):
     except Exception:
         traceback.print_exc()
 
-if __name__ == "__main__":
-    generate_matrix("/home/wtq/rna-similar-score.txt")
 
+def get_rna_name(file_path):
+    """
+    generate the rna name which related to rna-similar-score
+    :param file_path:
+    :return:
+    """
+    rna = db.target_scan_split.distinct("item2")
+    temp = []
+    files = file(file_path, 'w')
+
+    for i in rna:
+        files.write(i)
+        files.write('\n')
+
+if __name__ == "__main__":
+    # generate_matrix("/home/wtq/rna-similar-score.txt")
+    get_rna_name("/home/wtq/rna-name.txt")
