@@ -92,17 +92,18 @@ def calculate_similar_new():
     target_sum = len(list2)
     # 使用 batch_size控制一下每次查询块的大小，防止太大导致长时间不与服务器端联系而报错
     for item in db.rna_times.find().batch_size(50):
-        n1 = int(item["rna1-times"])
-        n2 = int(item["rna2-times"])
-        c = int(item["common-times"])
-        # 将decimal再转化为float，否则不能在mongo中存储
-        similarity = float(similarity_element_new(n1, n2, c, target_sum))
-        items = {
-            "rna1": item["rna1"],
-            "rna2": item["rna2"],
-            "similar_sore": similarity
-        }
-        db.similar_score_new2.insert(items)
+        if not db.similar_score_new2.find({"rna1": item["rna1"], "rna2": item["rna2"]}).count():
+            n1 = int(item["rna1-times"])
+            n2 = int(item["rna2-times"])
+            c = int(item["common-times"])
+            # 将decimal再转化为float，否则不能在mongo中存储
+            similarity = float(similarity_element_new(n1, n2, c, target_sum))
+            items = {
+                "rna1": item["rna1"],
+                "rna2": item["rna2"],
+                "similar_sore": similarity
+            }
+            db.similar_score_new2.insert(items)
 
 
 if __name__ == "__main__":
@@ -110,5 +111,6 @@ if __name__ == "__main__":
     # calculate_similar()
     # print c1(6, 0)
     calculate_similar_new()
+
 
 
