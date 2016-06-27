@@ -22,7 +22,7 @@ def generate_matrix(file_path):
         for r1 in rna1:
             similar = []
             for r2 in rna2:
-                 for i in db.similar_score_new.find({"$or": [{"rna1": r1, "rna2": r2}, {"rna1": r2, "rna2": r1}]}):
+                 for i in db.similar_score_new2.find({"$or": [{"rna1": r1, "rna2": r2}, {"rna1": r2, "rna2": r1}]}):
                      similar.append(i['similar_sore'])
 
             files.write(str(similar))
@@ -38,6 +38,7 @@ def get_rna_name(file_path):
     :return:
     """
     rna = db.target_scan_split.distinct("item2")
+    rna.sort()
     temp = []
     files = file(file_path, 'w')
 
