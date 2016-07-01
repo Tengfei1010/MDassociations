@@ -88,10 +88,13 @@ def calculate_similar_new():
     client = conn_mongo()
     db = client.md
     list2 = db.target_scan_split.distinct("item1")
+
     # get the 2th column distinct number
     target_sum = len(list2)
     # 使用 batch_size控制一下每次查询块的大小，防止太大导致长时间不与服务器端联系而报错
     for item in db.rna_times.find().batch_size(50):
+        # 查看similar_score_new2中是否有该记录
+
         if not db.similar_score_new2.find({"rna1": item["rna1"], "rna2": item["rna2"]}).count():
             n1 = int(item["rna1-times"])
             n2 = int(item["rna2-times"])
@@ -111,6 +114,4 @@ if __name__ == "__main__":
     # calculate_similar()
     # print c1(6, 0)
     calculate_similar_new()
-
-
-
+    # print similarity_element_new(30, 30, 30, 100)

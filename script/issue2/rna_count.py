@@ -63,8 +63,7 @@ def target_count():
             rna1.extend(f1key.values())
 
         for j in range(0, len(rrna)):
-            if rna[i] == rrna[j]:
-                break
+
             common = 0
             rna2 = []
             f2 = db.target_scan_split.find({"item2": rrna[j]}, {"item1": 1, "_id": 0})

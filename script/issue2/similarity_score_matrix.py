@@ -39,7 +39,6 @@ def get_rna_name(file_path):
     """
     rna = db.target_scan_split.distinct("item2")
     rna.sort()
-    temp = []
     files = file(file_path, 'w')
 
     for i in rna:
