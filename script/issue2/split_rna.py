@@ -5,6 +5,9 @@ __author__ = 'wtq'
 import traceback
 from mdat.db.conn_mongo import conn_mongo
 
+client = conn_mongo()
+db = client.md
+
 
 def split_rna():
     """
@@ -12,8 +15,7 @@ def split_rna():
     :return:
     """
     try:
-        client = conn_mongo()
-        db = client.md
+
         # db.target_scan_split.ensureIndex({"item1": 1, "item2": 1})
         for item in db.target_scan2.find():
             rna = item["item2"]
@@ -58,6 +60,22 @@ def split_rna():
         traceback.print_exc(e)
 
 
-if __name__ == "__main__":
-    split_rna()
+def write_file(path):
+    """
 
+    :param path:
+    :return:
+    """
+    with open(path, 'r') as f:
+        for line in f:
+            lines = line.split('\t')
+            items = {
+                "item2": lines[0],
+                "item1": lines[1]
+            }
+            db.target_scan.insert(items)
+
+
+if __name__ == "__main__":
+    # split_rna()
+    write_file("/home/wtq/Documents/rna_similar/targetscan_output_simple.txt")

@@ -28,7 +28,7 @@ def rna_count():
                        var ret={mirna:key,count:times};
                        return ret;}
                        """)
-        db.target_scan_split.map_reduce(maps, reduces, out="rnacount_test")
+        db.target_scan.map_reduce(maps, reduces, out="rnacount_new")
     except Exception:
         traceback.print_exc()
     end = time.clock()
@@ -58,15 +58,15 @@ def target_count():
         # 将两个特定的rna对应的target分别存到rna1[] rna2[]中， 在两个list中计算相似的target数目
         # 先查出两个rna对应的target存到内存中再计算速度较快
         rna1 = []
-        f1 = db.target_scan_split.find({"item2": rna[i]}, {"item1": 1, "_id": 0})
+        f1 = db.target_scan.find({"item2": rna[i]}, {"item1": 1, "_id": 0})
         for f1key in f1:
             rna1.extend(f1key.values())
-
+        # 此处换成range（i, len(rrna)）会降低计算量不影响结果
         for j in range(0, len(rrna)):
 
             common = 0
             rna2 = []
-            f2 = db.target_scan_split.find({"item2": rrna[j]}, {"item1": 1, "_id": 0})
+            f2 = db.target_scan.find({"item2": rrna[j]}, {"item1": 1, "_id": 0})
             for f2key in f2:
                 rna2.extend(f2key.values())
 
@@ -92,9 +92,3 @@ def target_count():
 if __name__ == '__main__':
     # rna_count()
     target_count()
-
-
-
-
-
-

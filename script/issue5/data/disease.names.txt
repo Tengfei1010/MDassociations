@@ -1,0 +1,134 @@
+ACTH-Secreting Pituitary Adenoma
+Adenocarcinoma
+Adenoma
+Adrenal Cortex Neoplasms
+Adrenocortical Adenoma
+Adrenocortical Carcinoma
+Anus Neoplasms
+Astrocytoma
+Biliary Tract Neoplasms
+Brain Neoplasms
+Breast Neoplasms
+Burkitt Lymphoma
+carcinoma
+Carcinoma, Basal Cell
+Carcinoma, Ductal, Breast
+Carcinoma, Ehrlich Tumor
+Carcinoma, Embryonal
+Carcinoma, Endometrioid
+Carcinoma, Hepatocellular
+Carcinoma, Hepatocellular 
+Carcinoma, Neuroendocrine
+Carcinoma, Non-Small-Cell Lung
+Carcinoma, Renal Cell
+Carcinoma, Small Cell
+Carcinoma, Squamous Cell
+Carcinoma, Pancreatic Ductal
+Cerebellar Neoplasms
+Cholangiocarcinoma
+Choleateatoma
+Cholesteatoma
+Chordoma
+Choriocarcinoma
+Colonic Neoplasms
+Colorectal Neoplasms
+Colorectal Neoplasms, Hereditary Nonpolyposis
+Digestive System Neoplasms
+Endometrial Neoplasms
+Ependymoma
+Esophageal Neoplasms
+Fibrosarcoma
+Gastrointestinal Neoplasms
+Giant Cell Tumors
+Glioblastoma
+Glioma
+Granulosa Cell Tumor
+Hamartoma
+Hamartoma Syndrome, Multiple
+Head and Neck Neoplasms
+Hemangioma
+Hemangiosarcoma
+Hematologic Neoplasms
+Hepatoblastoma
+Hypopharyngeal Neoplasms
+Insulinoma
+Kidney Neoplasms
+Kidney Neoplasms 
+Laryngeal Neoplasms
+Leiomyoma
+Leiomyosarcoma
+Leukemia
+Leukemia, B-Cell
+Leukemia, Biphenotypic, Acute
+Leukemia, Lymphocytic, Chronic, B-Cell
+Leukemia, Lymphoid
+Leukemia, Myelogenous, Chronic, BCR-ABL Positive
+Leukemia, Myeloid
+Leukemia, Myeloid, Acute
+Leukemia, Myeloid, Chronic-Phase
+Leukemia, Promyelocytic, Acute
+Leukemia, Myelomonocytic, Acute
+Leukemia, T-Cell
+Leukemia-Lymphoma, Adult T-Cell
+Lipoma
+Liposarcoma
+Liver Neoplasms
+Lung Neoplasms
+Lung Neoplasms 
+Lymphoma
+Lymphoma, B-Cell
+Lymphoma, Extranodal NK-T-Cell
+Lymphoma, Follicular
+Lymphoma, Large B-Cell, Diffuse
+Lymphoma, Large-Cell, Anaplastic
+Lymphoma, Mantle-Cell
+Lymphoma, Non-Hodgkin
+Lymphoma, Primary Effusion
+Lymphoma, T-Cell
+Medulloblastoma
+Melanoma
+Meningioma
+Mesothelioma
+Mouth Neoplasms
+Multiple Myeloma
+Myoma
+Nasopharyngeal Neoplasms
+Neoplasms
+Neoplasms, Germ Cell and Embryonal
+Neoplasms, Glandular and Epithelial
+Neoplasms, Squamous Cell
+Nerve Sheath Neoplasms
+Neurilemmoma
+Neuroblastoma
+Neurofibromatosis 2
+Neuroma, Acoustic
+Odontogenic Tumors
+Oligodendroglioma
+Osteosarcoma
+Ovarian Neoplasms
+Pancreatic Neoplasms
+Pheochromocytoma
+Pituitary Neoplasms
+Precursor B-Cell Lymphoblastic Leukemia-Lymphoma
+Precursor Cell Lymphoblastic Leukemia-Lymphoma
+Precursor T-Cell Lymphoblastic Leukemia-Lymphoma
+Prolactinoma
+Prostatic Neoplasms
+Rectal Neoplasms
+Retinoblastoma
+Rhabdomyosarcoma
+Salivary Gland Neoplasms
+Sarcoma
+Sarcoma, Ewing
+Sarcoma, Kaposi
+Sarcoma, Synovial
+Skin Neoplasms
+Small Cell Lung Carcinoma
+Stomach Neoplasms
+Teratocarcinoma
+Testicular Neoplasms
+Thyroid Carcinoma,Anaplastic
+Thyroid Neoplasms
+Tongue Neoplasms
+Urinary Bladder Neoplasms
+Uterine Cervical Neoplasms

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 __author__ = 'wtq'
 
+import time
 import decimal
 import operator
 import traceback
@@ -87,15 +88,26 @@ def calculate_similar_new():
     """
     client = conn_mongo()
     db = client.md
-    list2 = db.target_scan_split.distinct("item1")
+    list2 = db.target_scan.distinct("item1")
+
+    rna = []
+    rrna = []
+    for item in db.rnacount_new.find():
+        rna.append(item['value']['mirna'])
+        rrna.append(item['value']['mirna'])
+    # rna与rrna分别为正序列逆序列存储着rna的list
+    rrna.reverse()
 
     # get the 2th column distinct number
     target_sum = len(list2)
-    # 使用 batch_size控制一下每次查询块的大小，防止太大导致长时间不与服务器端联系而报错
-    for item in db.rna_times.find().batch_size(50):
-        # 查看similar_score_new2中是否有该记录
 
-        if not db.similar_score_new2.find({"rna1": item["rna1"], "rna2": item["rna2"]}).count():
+    for i in range(0, len(rna)):
+        for j in range(0, len(rrna)-i):
+
+            item_find = db.rna_times.find({"rna1": rna[i], "rna2": rrna[j]})
+        # # if not db.similar_score_new2.find({"rna1": item["rna1"], "rna2": item["rna2"]}).count():
+            item = item_find[0]
+
             n1 = int(item["rna1-times"])
             n2 = int(item["rna2-times"])
             c = int(item["common-times"])
@@ -106,12 +118,12 @@ def calculate_similar_new():
                 "rna2": item["rna2"],
                 "similar_sore": similarity
             }
-            db.similar_score_new2.insert(items)
+            db.similar_score.insert(items)
 
 
 if __name__ == "__main__":
     # print similarity_element(4, 5, 3)
     # calculate_similar()
-    # print c1(6, 0)
+    # c1(500, 20)
     calculate_similar_new()
     # print similarity_element_new(30, 30, 30, 100)
